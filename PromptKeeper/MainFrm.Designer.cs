@@ -47,41 +47,47 @@
             // 
             templateListBox.Dock = DockStyle.Left;
             templateListBox.FormattingEnabled = true;
+            templateListBox.ItemHeight = 24;
             templateListBox.Location = new Point(0, 0);
+            templateListBox.Margin = new Padding(4, 4, 4, 4);
             templateListBox.Name = "templateListBox";
-            templateListBox.Size = new Size(221, 754);
+            templateListBox.Size = new Size(269, 905);
             templateListBox.TabIndex = 0;
             // 
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new Point(247, 26);
+            descriptionLabel.Location = new Point(302, 31);
+            descriptionLabel.Margin = new Padding(4, 0, 4, 0);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new Size(0, 20);
+            descriptionLabel.Size = new Size(0, 24);
             descriptionLabel.TabIndex = 1;
             descriptionLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // resultTextBox
             // 
-            resultTextBox.Location = new Point(247, 69);
+            resultTextBox.Location = new Point(302, 83);
+            resultTextBox.Margin = new Padding(4, 4, 4, 4);
             resultTextBox.Multiline = true;
             resultTextBox.Name = "resultTextBox";
-            resultTextBox.Size = new Size(893, 457);
+            resultTextBox.Size = new Size(1091, 548);
             resultTextBox.TabIndex = 2;
             // 
             // inputTextBox
             // 
-            inputTextBox.Location = new Point(247, 553);
+            inputTextBox.Location = new Point(302, 664);
+            inputTextBox.Margin = new Padding(4, 4, 4, 4);
             inputTextBox.Multiline = true;
             inputTextBox.Name = "inputTextBox";
-            inputTextBox.Size = new Size(777, 155);
+            inputTextBox.Size = new Size(949, 185);
             inputTextBox.TabIndex = 3;
             // 
             // generateButton
             // 
-            generateButton.Location = new Point(1046, 553);
+            generateButton.Location = new Point(1278, 664);
+            generateButton.Margin = new Padding(4, 4, 4, 4);
             generateButton.Name = "generateButton";
-            generateButton.Size = new Size(94, 155);
+            generateButton.Size = new Size(115, 186);
             generateButton.TabIndex = 4;
             generateButton.Text = "生成\r\n(Shift+Enter)";
             generateButton.UseVisualStyleBackColor = true;
@@ -97,9 +103,10 @@
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { 操作ToolStripMenuItem });
-            menuStrip1.Location = new Point(221, 0);
+            menuStrip1.Location = new Point(269, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(953, 28);
+            menuStrip1.Padding = new Padding(7, 2, 0, 2);
+            menuStrip1.Size = new Size(1166, 32);
             menuStrip1.TabIndex = 5;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -107,37 +114,38 @@
             // 
             操作ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { syncToolStripMenuItem, generationLogToolStripMenuItem });
             操作ToolStripMenuItem.Name = "操作ToolStripMenuItem";
-            操作ToolStripMenuItem.Size = new Size(53, 24);
-            操作ToolStripMenuItem.Text = "操作";
+            操作ToolStripMenuItem.Size = new Size(62, 28);
+            操作ToolStripMenuItem.Text = "菜单";
             // 
             // syncToolStripMenuItem
             // 
             syncToolStripMenuItem.Name = "syncToolStripMenuItem";
-            syncToolStripMenuItem.Size = new Size(224, 26);
+            syncToolStripMenuItem.Size = new Size(270, 34);
             syncToolStripMenuItem.Text = "同步数据";
             syncToolStripMenuItem.Click += syncToolStripMenuItem_Click;
             // 
             // generationLogToolStripMenuItem
             // 
             generationLogToolStripMenuItem.Name = "generationLogToolStripMenuItem";
-            generationLogToolStripMenuItem.Size = new Size(224, 26);
+            generationLogToolStripMenuItem.Size = new Size(270, 34);
             generationLogToolStripMenuItem.Text = "生成日志";
             // 
             // syncLabel
             // 
             syncLabel.AutoSize = true;
             syncLabel.ForeColor = SystemColors.Highlight;
-            syncLabel.Location = new Point(1087, 28);
+            syncLabel.Location = new Point(1329, 34);
+            syncLabel.Margin = new Padding(4, 0, 4, 0);
             syncLabel.Name = "syncLabel";
-            syncLabel.Size = new Size(0, 20);
+            syncLabel.Size = new Size(0, 24);
             syncLabel.TabIndex = 6;
             syncLabel.TextAlign = ContentAlignment.MiddleRight;
             // 
             // MainFrm
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1174, 754);
+            ClientSize = new Size(1435, 905);
             Controls.Add(syncLabel);
             Controls.Add(menuStrip1);
             Controls.Add(generateButton);
@@ -146,6 +154,7 @@
             Controls.Add(descriptionLabel);
             Controls.Add(templateListBox);
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(4, 4, 4, 4);
             Name = "MainFrm";
             Text = "PromptKeeper 提示词工具";
             menuStrip1.ResumeLayout(false);

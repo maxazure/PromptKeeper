@@ -11,7 +11,7 @@ namespace PromptKeeper
     public class NetworkService
     {
         private HttpClient _client;
-        private string _baseUri = "http://localhost:5000/api/";
+        private string _baseUri = Environment.GetEnvironmentVariable("PROMPT_KEEPER_API_BASE_URI") ?? "http://localhost:5000/api/";
 
         public NetworkService()
         {
