@@ -155,8 +155,6 @@ namespace PromptKeeper
             var templateService = new TemplateService();
             templateService.RecordGeneratedContent(selectedTemplate.Id, generatedContent);
 
-            // 可选：显示成功消息
-            MessageBox.Show("内容生成并已保存成功！");
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -198,6 +196,21 @@ namespace PromptKeeper
 
         }
 
+        private async void SyncDataForClosing()
+        {
+            try
+            {
+                await _networkService.SyncFromServer(LocalDatabaseUpdate);
+                var templates = _templateService.GetAllTemplates();
+                await _networkService.SyncToServer(templates);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("同步失败: " + ex.Message);
+            }
+
+        }
+
         private void LocalDatabaseUpdate(List<Template> templates)
         {
             foreach (var template in templates)
@@ -211,5 +224,9 @@ namespace PromptKeeper
             syncLabel.Text = text;
         }
 
+        private void MainFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SyncData();
+        }
     }
 }

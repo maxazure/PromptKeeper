@@ -49,7 +49,7 @@
             templateListBox.FormattingEnabled = true;
             templateListBox.ItemHeight = 24;
             templateListBox.Location = new Point(0, 0);
-            templateListBox.Margin = new Padding(4, 4, 4, 4);
+            templateListBox.Margin = new Padding(4);
             templateListBox.Name = "templateListBox";
             templateListBox.Size = new Size(269, 905);
             templateListBox.TabIndex = 0;
@@ -67,7 +67,7 @@
             // resultTextBox
             // 
             resultTextBox.Location = new Point(302, 83);
-            resultTextBox.Margin = new Padding(4, 4, 4, 4);
+            resultTextBox.Margin = new Padding(4);
             resultTextBox.Multiline = true;
             resultTextBox.Name = "resultTextBox";
             resultTextBox.Size = new Size(1091, 548);
@@ -76,7 +76,7 @@
             // inputTextBox
             // 
             inputTextBox.Location = new Point(302, 664);
-            inputTextBox.Margin = new Padding(4, 4, 4, 4);
+            inputTextBox.Margin = new Padding(4);
             inputTextBox.Multiline = true;
             inputTextBox.Name = "inputTextBox";
             inputTextBox.Size = new Size(949, 185);
@@ -85,7 +85,7 @@
             // generateButton
             // 
             generateButton.Location = new Point(1278, 664);
-            generateButton.Margin = new Padding(4, 4, 4, 4);
+            generateButton.Margin = new Padding(4);
             generateButton.Name = "generateButton";
             generateButton.Size = new Size(115, 186);
             generateButton.TabIndex = 4;
@@ -120,14 +120,14 @@
             // syncToolStripMenuItem
             // 
             syncToolStripMenuItem.Name = "syncToolStripMenuItem";
-            syncToolStripMenuItem.Size = new Size(270, 34);
+            syncToolStripMenuItem.Size = new Size(182, 34);
             syncToolStripMenuItem.Text = "同步数据";
             syncToolStripMenuItem.Click += syncToolStripMenuItem_Click;
             // 
             // generationLogToolStripMenuItem
             // 
             generationLogToolStripMenuItem.Name = "generationLogToolStripMenuItem";
-            generationLogToolStripMenuItem.Size = new Size(270, 34);
+            generationLogToolStripMenuItem.Size = new Size(182, 34);
             generationLogToolStripMenuItem.Text = "生成日志";
             // 
             // syncLabel
@@ -154,9 +154,10 @@
             Controls.Add(descriptionLabel);
             Controls.Add(templateListBox);
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "MainFrm";
             Text = "PromptKeeper 提示词工具";
+            FormClosing += MainFrm_FormClosing;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
