@@ -7,8 +7,8 @@ namespace PromptKeeper
     public partial class MainFrm : Form
     {
 
-        private NetworkService _networkService;
-        private TemplateService _templateService;
+        private readonly NetworkService _networkService;
+        private readonly TemplateService _templateService;
         public MainFrm()
         {
             _networkService = new NetworkService();
