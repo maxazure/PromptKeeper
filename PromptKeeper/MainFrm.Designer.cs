@@ -40,7 +40,9 @@
             syncToolStripMenuItem = new ToolStripMenuItem();
             generationLogToolStripMenuItem = new ToolStripMenuItem();
             syncLabel = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             menuStrip1.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // templateListBox
@@ -51,7 +53,7 @@
             templateListBox.Location = new Point(0, 0);
             templateListBox.Margin = new Padding(4);
             templateListBox.Name = "templateListBox";
-            templateListBox.Size = new Size(269, 905);
+            templateListBox.Size = new Size(269, 1224);
             templateListBox.TabIndex = 0;
             // 
             // descriptionLabel
@@ -66,28 +68,29 @@
             // 
             // resultTextBox
             // 
-            resultTextBox.Location = new Point(302, 83);
+            resultTextBox.Dock = DockStyle.Top;
+            resultTextBox.Location = new Point(4, 4);
             resultTextBox.Margin = new Padding(4);
             resultTextBox.Multiline = true;
             resultTextBox.Name = "resultTextBox";
-            resultTextBox.Size = new Size(1091, 548);
+            resultTextBox.Size = new Size(1625, 858);
             resultTextBox.TabIndex = 2;
             // 
             // inputTextBox
             // 
-            inputTextBox.Location = new Point(302, 664);
+            inputTextBox.Location = new Point(4, 870);
             inputTextBox.Margin = new Padding(4);
             inputTextBox.Multiline = true;
             inputTextBox.Name = "inputTextBox";
-            inputTextBox.Size = new Size(949, 185);
+            inputTextBox.Size = new Size(1498, 322);
             inputTextBox.TabIndex = 3;
             // 
             // generateButton
             // 
-            generateButton.Location = new Point(1278, 664);
+            generateButton.Location = new Point(1510, 870);
             generateButton.Margin = new Padding(4);
             generateButton.Name = "generateButton";
-            generateButton.Size = new Size(115, 186);
+            generateButton.Size = new Size(115, 322);
             generateButton.TabIndex = 4;
             generateButton.Text = "生成\r\n(Shift+Enter)";
             generateButton.UseVisualStyleBackColor = true;
@@ -106,7 +109,7 @@
             menuStrip1.Location = new Point(269, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 2, 0, 2);
-            menuStrip1.Size = new Size(1166, 32);
+            menuStrip1.Size = new Size(1629, 32);
             menuStrip1.TabIndex = 5;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -141,16 +144,25 @@
             syncLabel.TabIndex = 6;
             syncLabel.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Controls.Add(resultTextBox);
+            flowLayoutPanel1.Controls.Add(inputTextBox);
+            flowLayoutPanel1.Controls.Add(generateButton);
+            flowLayoutPanel1.Dock = DockStyle.Fill;
+            flowLayoutPanel1.Location = new Point(269, 32);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(1629, 1192);
+            flowLayoutPanel1.TabIndex = 7;
+            // 
             // MainFrm
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1435, 905);
+            ClientSize = new Size(1898, 1224);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(syncLabel);
             Controls.Add(menuStrip1);
-            Controls.Add(generateButton);
-            Controls.Add(inputTextBox);
-            Controls.Add(resultTextBox);
             Controls.Add(descriptionLabel);
             Controls.Add(templateListBox);
             MainMenuStrip = menuStrip1;
@@ -160,6 +172,8 @@
             FormClosing += MainFrm_FormClosing;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -177,5 +191,6 @@
         private ToolStripMenuItem syncToolStripMenuItem;
         private ToolStripMenuItem generationLogToolStripMenuItem;
         private Label syncLabel;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
